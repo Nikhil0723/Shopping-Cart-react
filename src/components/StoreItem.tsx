@@ -29,18 +29,17 @@ export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
         <div className="mt-auto">
           {quantity === 0 ? (
             <Button className="w-100" onClick={() => increaseCartQuantity(id)}>+ Add to Cart</Button>
-          ) : <div className="d-flex align-items-center flex-column" style={{ gap: ".5rem" }}>
+          ) : <div className="d-flex align-items-center justify-content-between" style={{ gap: ".5rem" }}>
             <div className="d-flex align-items-center justify-content-center" style={{ gap: ".5rem" }}>
               <Button className="w-100" onClick={() => decreaseCartQuantity(id)}>-</Button>
-              <div className="d-flex ">
+              <div className="d-flex fs-3">
                 {quantity} 
-                in cart
               </div>
 
               <Button className="w-100" onClick={() => increaseCartQuantity(id)}>+</Button>
 
             </div>
-            <Button className="w-100" variant="danger" onClick={() => removeFromCart(id)}>Remove</Button>
+            <Button className="" variant="danger" onClick={() => removeFromCart(id)}>Remove</Button>
           </div>}
         </div>
       </Card.Body>
